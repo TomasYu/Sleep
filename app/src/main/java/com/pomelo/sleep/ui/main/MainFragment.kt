@@ -45,7 +45,7 @@ class MainFragment : Fragment() {
         val handler = Handler()
         handler.postDelayed({
             soundPool.stop(play)
-        },1 * 60 * 1000);
+        },10 * 60 * 1000);
         return viewDataBinding.root
     }
 
