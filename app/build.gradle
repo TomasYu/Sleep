@@ -6,6 +6,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('../key/yu.jks')
+            storePassword 'caoxinyu'
+            keyPassword 'caoxinyu'
+            keyAlias 'pomelo'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -23,6 +31,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
